@@ -1,17 +1,15 @@
+#Import libraries
 library(ggplot2)
 library(plotly)
-
+#Open sample gene expression data
 df1<-read.csv('/Users/danielaquijano/Downloads/d.csv')
 View(df1)
 
-
-
 # Sort by most expressed genes
-df2 <-df1[order(-df1$UT1, -df1$UT2),]
+df2 <-df1[order(-df1$UT1, -df1$UT2,-df1$UT3,-df1$NC1,-df$NC2,-df$NC3),]
 head(df2)
 
-
-library(plotly)
+#Make Bar Plot
 
 fig <- plot_ly(
   x = c(df2$gene_name[1:50]),
